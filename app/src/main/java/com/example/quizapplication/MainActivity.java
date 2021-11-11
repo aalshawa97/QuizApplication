@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         Button btStartQuiz = findViewById(R.id.btStartQuiz);
 
         btStartQuiz.setOnClickListener(v -> {
-            //startActivity(new Intent(this, ContainerActivity.class));
+            startActivity(new Intent(this, ContainerActivity.class));
         });
     }
 }
