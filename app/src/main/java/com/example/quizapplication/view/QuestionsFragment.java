@@ -89,15 +89,26 @@ public class QuestionsFragment extends Fragment {
         rb2.setText(questions.get(0).getOption().get(1));
         rb3.setText(questions.get(0).getOption().get(2));
         rb4.setText(questions.get(0).getOption().get(3));
-        QuestionService.COUNTER ++;
+
+        if(QuestionService.COUNTER == questions.size()-1)
+        {
+            QuestionService.COUNTER ++;
+        }
 
         Button btNext = view.findViewById(R.id.btNextQuestion);
         btNext.setOnClickListener(v -> {
-            tvQuestion.setText(questions.get(QuestionService.COUNTER).getTitle());
+            try{
+                tvQuestion.setText(questions.get(QuestionService.COUNTER).getTitle());
+            }
+            catch (Exception e)
+            {
+
+            }
             rb1.setText(questions.get(QuestionService.COUNTER).getOption().get(0));
             rb2.setText(questions.get(QuestionService.COUNTER).getOption().get(1));
             rb3.setText(questions.get(QuestionService.COUNTER).getOption().get(2));
             rb4.setText(questions.get(QuestionService.COUNTER).getOption().get(3));
+            QuestionService.COUNTER ++;
         });
     }
 
