@@ -44,4 +44,12 @@
             android:text="@string/option_4" />
     </RadioGroup>
 
+    <Button
+        android:id="@+id/btNextQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="@+id/rgQuestion"
+        app:layout_constraintStart_toStartOf="@+id/rgQuestion" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

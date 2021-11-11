@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class QuestionService extends Service {
+    public static int COUNTER = 0;
+
     public QuestionService() {
     }
 

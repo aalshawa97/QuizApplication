@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -88,7 +89,16 @@ public class QuestionsFragment extends Fragment {
         rb2.setText(questions.get(0).getOption().get(1));
         rb3.setText(questions.get(0).getOption().get(2));
         rb4.setText(questions.get(0).getOption().get(3));
+        QuestionService.COUNTER ++;
 
+        Button btNext = view.findViewById(R.id.btNextQuestion);
+        btNext.setOnClickListener(v -> {
+            tvQuestion.setText(questions.get(QuestionService.COUNTER).getTitle());
+            rb1.setText(questions.get(QuestionService.COUNTER).getOption().get(0));
+            rb2.setText(questions.get(QuestionService.COUNTER).getOption().get(1));
+            rb3.setText(questions.get(QuestionService.COUNTER).getOption().get(2));
+            rb4.setText(questions.get(QuestionService.COUNTER).getOption().get(3));
+        });
     }
 
     public void initialize(View view){
