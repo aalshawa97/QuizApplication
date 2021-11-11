@@ -1,4 +1,4 @@
-package com.example.quizapplication;
+package com.example.quizapplication.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.quizapplication.R;
+import com.example.quizapplication.view.ContainerActivity;
 
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
