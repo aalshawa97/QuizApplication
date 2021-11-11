@@ -30,3 +30,10 @@ public class QuestionService extends Service {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 }
+
+//Unit testing
+// 1. Test for serializing the API data
+// 2. Testing for the API itself for every call
+// UI success ->
+// 400 ->
+// 500 -> Internet

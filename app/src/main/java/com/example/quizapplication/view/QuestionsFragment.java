@@ -5,19 +5,23 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.quizapplication.R;
 import com.example.quizapplication.model.Question;
 import com.example.quizapplication.model.QuestionService;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +35,8 @@ public class QuestionsFragment extends Fragment {
     private RadioButton rb2;
     private RadioButton rb3;
     private RadioButton rb4;
+    private RadioGroup radioGroup;
+    List<String> answers;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -95,25 +101,53 @@ public class QuestionsFragment extends Fragment {
             QuestionService.COUNTER ++;
         }
 
+        /*
+        int radioButtonID = radioGroup.getCheckedRadioButtonId();
+        RadioButton radioButton = radioGroup.findViewById(radioButtonID);
+
+        try{
+            answers.add((String) radioButton.getText());
+        }
+        catch (Exception e)
+        {
+
+        }
+        */
         Button btNext = view.findViewById(R.id.btNextQuestion);
+
         btNext.setOnClickListener(v -> {
             try{
                 tvQuestion.setText(questions.get(QuestionService.COUNTER).getTitle());
+                rb1.setText(questions.get(QuestionService.COUNTER).getOption().get(0));
+                rb2.setText(questions.get(QuestionService.COUNTER).getOption().get(1));
+                rb3.setText(questions.get(QuestionService.COUNTER).getOption().get(2));
+                rb4.setText(questions.get(QuestionService.COUNTER).getOption().get(3));
+                //answers.add((String) radioButton.getText());
+                if(QuestionService.COUNTER == questions.size()){
+                    launchFragment(new Results());
+                }
+            QuestionService.COUNTER ++;
             }
             catch (Exception e)
             {
 
             }
-            rb1.setText(questions.get(QuestionService.COUNTER).getOption().get(0));
-            rb2.setText(questions.get(QuestionService.COUNTER).getOption().get(1));
-            rb3.setText(questions.get(QuestionService.COUNTER).getOption().get(2));
-            rb4.setText(questions.get(QuestionService.COUNTER).getOption().get(3));
-            QuestionService.COUNTER ++;
         });
     }
 
+    public void launchFragment(Fragment fragment){
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("Q1", (ArrayList<String>) answers);
+        fragment.setArguments(bundle);
+        this.requireActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frameLayout, fragment)
+                .addToBackStack(null);
+    }
+
     public void initialize(View view){
+        answers = new ArrayList<>();
         tvQuestion = view.findViewById(R.id.tvQuestion);
+        radioGroup = view.findViewById(R.id.rgQuestion);
         rb1 = view.findViewById(R.id.rb1);
         rb2 = view.findViewById(R.id.rb2);
         rb3 = view.findViewById(R.id.rb3);

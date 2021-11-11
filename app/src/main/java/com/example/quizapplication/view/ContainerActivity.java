@@ -20,6 +20,12 @@ public class ContainerActivity extends AppCompatActivity {
     }
 
     public void launchFragment(Fragment fragment){
+
+        //Fragment fragmentI = new Fragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("Q1", 0);
+        fragment.setArguments(bundle);
+
         this.getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, fragment)
                 .addToBackStack(null)
