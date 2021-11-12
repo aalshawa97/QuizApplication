@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.quizapplication.R;
 import com.example.quizapplication.model.Question;
@@ -101,29 +103,30 @@ public class QuestionsFragment extends Fragment {
             QuestionService.COUNTER ++;
         }
 
-        /*
-        int radioButtonID = radioGroup.getCheckedRadioButtonId();
-        RadioButton radioButton = radioGroup.findViewById(radioButtonID);
-
         try{
-            answers.add((String) radioButton.getText());
+
         }
         catch (Exception e)
         {
 
         }
-        */
+
         Button btNext = view.findViewById(R.id.btNextQuestion);
 
         btNext.setOnClickListener(v -> {
             try{
+                int radioButtonID = radioGroup.getCheckedRadioButtonId();
+                RadioButton radioButton = radioGroup.findViewById(radioButtonID);
+                answers.add((String) radioButton.getText());
+                Log.d("Answer", "onViewCreated: " + answers.get(QuestionService.COUNTER));
+                Toast.makeText(this.getContext(), "Answer: " + answers.get(QuestionService.COUNTER), Toast.LENGTH_LONG);
                 tvQuestion.setText(questions.get(QuestionService.COUNTER).getTitle());
                 rb1.setText(questions.get(QuestionService.COUNTER).getOption().get(0));
                 rb2.setText(questions.get(QuestionService.COUNTER).getOption().get(1));
                 rb3.setText(questions.get(QuestionService.COUNTER).getOption().get(2));
                 rb4.setText(questions.get(QuestionService.COUNTER).getOption().get(3));
-                //answers.add((String) radioButton.getText());
-                if(QuestionService.COUNTER == questions.size()){
+                answers.add((String) radioButton.getText());
+                if(QuestionService.COUNTER == questions.size()-1){
                     launchFragment(new Results());
                 }
             QuestionService.COUNTER ++;
