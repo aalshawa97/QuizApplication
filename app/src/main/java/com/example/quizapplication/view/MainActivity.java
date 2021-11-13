@@ -7,6 +7,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.example.quizapplication.R;
 import com.example.quizapplication.view.ContainerActivity;
@@ -14,6 +15,7 @@ import com.example.quizapplication.view.ContainerActivity;
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Toast.makeText(getApplicationContext(), "Hello and welcome to the quiz application!", Toast.LENGTH_LONG).show();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btStartQuiz = findViewById(R.id.btStartQuiz);
