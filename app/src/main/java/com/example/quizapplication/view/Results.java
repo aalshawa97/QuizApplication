@@ -49,7 +49,7 @@ public class Results extends Fragment {
             String ans = answers.get(i);
             if(ans.equals(currentQuestion.getAnswer())){
                 score++;
-                Toast.makeText(this.getContext(), "Correct answer!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(), "Correct answer!", Toast.LENGTH_LONG).show();
             }
         }
     }

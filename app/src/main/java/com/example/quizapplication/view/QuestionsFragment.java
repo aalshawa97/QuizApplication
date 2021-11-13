@@ -119,7 +119,7 @@ public class QuestionsFragment extends Fragment {
                 RadioButton radioButton = radioGroup.findViewById(radioButtonID);
                 answers.add((String) radioButton.getText());
                 Log.d("Answer", "onViewCreated: " + answers.get(QuestionService.COUNTER));
-                Toast.makeText(this.getContext(), "Answer: " + answers.get(QuestionService.COUNTER), Toast.LENGTH_LONG);
+                Toast.makeText(this.getContext(), "Answer: " + answers.get(QuestionService.COUNTER), Toast.LENGTH_LONG).show();
                 tvQuestion.setText(questions.get(QuestionService.COUNTER).getTitle());
                 rb1.setText(questions.get(QuestionService.COUNTER).getOption().get(0));
                 rb2.setText(questions.get(QuestionService.COUNTER).getOption().get(1));
@@ -127,6 +127,7 @@ public class QuestionsFragment extends Fragment {
                 rb4.setText(questions.get(QuestionService.COUNTER).getOption().get(3));
                 //answers.add((String) radioButton.getText());
                 if(QuestionService.COUNTER == questions.size()-1){
+
                     launchFragment(new Results());
                 }
             QuestionService.COUNTER ++;
