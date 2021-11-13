@@ -18,8 +18,8 @@ public class QuestionService extends Service {
         List<Question> questionList = new ArrayList<>();
 
         questionList.add(new Question("What's your name?", "Abdullah Mutaz Alshawa", new ArrayList<>(Arrays.asList("Abdullah Mutaz Alshawa", "Muhammad Ali", "Khabib Nurmagomedov", "Muhammed Saleh"))));
-        questionList.add(new Question("Question2?", "A", new ArrayList<>(Arrays.asList("A", "B", "C", "D"))));
-        questionList.add(new Question("Question3?", "A", new ArrayList<>(Arrays.asList("A", "B", "C", "D"))));
+        questionList.add(new Question("Where were you born?", "Portland", new ArrayList<>(Arrays.asList("Boston", "Portland", "Mecca", "Gaza"))));
+        questionList.add(new Question("What was your first car?", "Ford", new ArrayList<>(Arrays.asList("Nissan", "Ford", "Toyota", "Kia"))));
 
         return questionList;
     }
