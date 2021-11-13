@@ -7,10 +7,10 @@
 
     <RadioGroup
         android:id="@+id/rgQuestion"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="478dp"
+        android:layout_height="865dp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="4dp">
 
         <TextView
             android:id="@+id/tvQuestion"
@@ -24,35 +24,34 @@
 
         <RadioButton
             android:id="@+id/rb1"
-            android:layout_width="143dp"
-            android:layout_height="108dp"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
             android:text="@string/option_1" />
 
         <RadioButton
             android:id="@+id/rb2"
-            android:layout_width="131dp"
-            android:layout_height="131dp"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
             android:text="@string/option_2" />
 
         <RadioButton
             android:id="@+id/rb3"
-            android:layout_width="128dp"
-            android:layout_height="104dp"
+            android:layout_width="118dp"
+            android:layout_height="wrap_content"
             android:text="@string/option_3" />
 
         <RadioButton
             android:id="@+id/rb4"
-            android:layout_width="136dp"
-            android:layout_height="140dp"
+            android:layout_width="121dp"
+            android:layout_height="wrap_content"
             android:text="@string/option_4" />
-    </RadioGroup>
 
-    <Button
-        android:id="@+id/btNextQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="@+id/rgQuestion"
-        app:layout_constraintStart_toStartOf="@+id/rgQuestion" />
+        <Button
+            android:id="@+id/btNextQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
