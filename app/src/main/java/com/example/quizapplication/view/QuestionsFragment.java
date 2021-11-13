@@ -125,7 +125,7 @@ public class QuestionsFragment extends Fragment {
                 rb2.setText(questions.get(QuestionService.COUNTER).getOption().get(1));
                 rb3.setText(questions.get(QuestionService.COUNTER).getOption().get(2));
                 rb4.setText(questions.get(QuestionService.COUNTER).getOption().get(3));
-                answers.add((String) radioButton.getText());
+                //answers.add((String) radioButton.getText());
                 if(QuestionService.COUNTER == questions.size()-1){
                     launchFragment(new Results());
                 }

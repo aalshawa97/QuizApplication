@@ -2,6 +2,8 @@ package com.example.quizapplication.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.Button;
 import android.content.Intent;
@@ -18,6 +20,21 @@ public class MainActivity extends AppCompatActivity {
 
         btStartQuiz.setOnClickListener(v -> {
             startActivity(new Intent(this, ContainerActivity.class));
+        });
+
+        Button btResults = findViewById(R.id.btResults);
+
+        btResults.setOnClickListener(v -> {
+            //Intent i = new Intent(MainActivity.this,Results.class);
+            //startActivity(i);
+/*
+            FragmentManager manager = getFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.add(R.id.container,Results.class,"Results");
+            transaction.addToBackStack(null);
+            transaction.commit();
+*/
+            //startActivity(new Intent(this, Results.class));
         });
     }
 }
