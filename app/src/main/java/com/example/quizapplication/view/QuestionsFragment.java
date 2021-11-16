@@ -127,8 +127,8 @@ public class QuestionsFragment extends Fragment {
                 rb4.setText(questions.get(QuestionService.COUNTER).getOption().get(3));
                 //answers.add((String) radioButton.getText());
                 if(QuestionService.COUNTER == questions.size()){
-                    //Toast.makeText(this.getContext(), "Launching results!" + answers.get(QuestionService.COUNTER), Toast.LENGTH_SHORT).show();
-                    launchFragment(new Results());
+                    Toast.makeText(this.getContext(), "Launching results!" + answers.get(QuestionService.COUNTER), Toast.LENGTH_SHORT).show();
+                    //launchFragment(new Results());
                 }
             QuestionService.COUNTER ++;
             }
